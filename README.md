@@ -1,30 +1,14 @@
 # Spring Boot & Spring Cloud
-
 In questo progetto si è fatto utilizzo di Spring Boot e Spring Cloud.
 
-Ci sono 5 microservizi:
+**INFRASTRUTTURALI**
+1. config: Config Server (sulla porta 7777)
+2. discovery: Eureka Server (sulla porta 8761)
+3. gateway: Zuul Proxy (sulla porta 8085)
 
-** INFRASTRUTTURALI **
-	1. config: Config Server (sulla porta 7777)
-	2. discovery: Eureka Server (sulla porta 8761)
-	3. gateway: Zuul Proxy (sulla porta 8085)
-
-** APPLICATIVI **
-	4. hello-service: servizio che utilizza una property per stampare un nome... (sulla porta 8090)
-						http://localhost:8090/hello/hi
-						
-						oppure, utilizzando il gateway:
-						http://localhost:8085/hello-service/hello/hi
-						
-						
-	5. pokemon: servizio che utilizza api esterne (pokemon...) (sulla porta 8091)
-						http://localhost:8091/pokemon/type/7
-						
-						oppure, utilizzando il gateway:
-						http://localhost:8085/pokemon/pokemon/type/7/
-
-
-
+**APPLICATIVI**
+4. hello-service: servizio che utilizza una property per stampare un nome (sulla porta 8090)
+5. pokemon: servizio che utilizza api esterne (pokemon) (sulla porta 8091)
 					
 ## Come avviare i microservizi?
 Avvia prima i microservizi "infrastrutturali":
@@ -36,10 +20,20 @@ Poi tutti gli altri microservizi "applicativi":
 - hello
 - pokemon
 
-
+## Esempio
 Su http://localhost:8761/ troviamo eureka:
 
-** IMG **
+![EurekaDashboard](/img/EurekaTest.png)
+
+Su http://localhost:8090/hello/hi (oppure, utilizzando il gateway su: http://localhost:8085/hello-service/hello/hi):
+
+![HelloProperty](/img/HelloProperty.png)
+
+
+Su http://localhost:8091/pokemon/type/7 (oppure, utilizzando il gateway su: http://localhost:8085/pokemon/pokemon/type/7/):
+
+![PokemonGateway](/img/PokemonGateway.png)
+
 
 
 ## Spring Cloud Config
