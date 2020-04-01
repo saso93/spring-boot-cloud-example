@@ -1,5 +1,13 @@
 # Spring Boot & Spring Cloud
-In questo progetto si è fatto utilizzo di Spring Boot e Spring Cloud.
+In questo progetto si è fatto utilizzo di:
+1) Spring Boot
+2) Spring Cloud Netflix Eureka (service discovery per i microservizi)
+3) Spring Cloud Config (configurazione distribuita)
+4) Spring Cloud Gateway Zuul
+
+![Arch](/img/arch.png)
+
+Nel nostro esempio abbiamo due microservizi indipendenti, che si registrano (service discovery), recuperano le property dal config service (concetto di configurazione distribuita) e comunicano tra di loro. L'intero sistema è "nascosto" dietro un API gateway (ZUUL).
 
 **INFRASTRUTTURALI**
 1. config: Config Server (sulla porta 7777)
@@ -7,8 +15,8 @@ In questo progetto si è fatto utilizzo di Spring Boot e Spring Cloud.
 3. gateway: Zuul Proxy (sulla porta 8085)
 
 **APPLICATIVI**
-4. hello-service: servizio che utilizza una property per stampare un nome (sulla porta 8090)
-5. pokemon: servizio che utilizza api esterne (pokemon) (sulla porta 8091)
+4. hello-service: servizio a scopo didattico molto basilare che utilizza una property per stampare un nome (sulla porta 8090)
+5. pokemon: servizio a scopo didattico molto basilare che utilizza api esterne (pokemon) (sulla porta 8091)
 					
 ## Come avviare i microservizi?
 Avvia prima i microservizi "infrastrutturali":
@@ -82,3 +90,8 @@ Ad esempio, possiamo accedere a:
 http://localhost:8090/hello/hi
 oppure, tramite il gateway a:
 http://localhost:8085/hello-service/hello/hi
+
+
+
+## Ulteriori guide
+https://dzone.com/articles/quick-guide-to-microservices-with-spring-boot-20-e
