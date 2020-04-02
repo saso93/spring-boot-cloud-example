@@ -7,7 +7,7 @@ In questo progetto si è fatto utilizzo di:
 
 ![Arch](/img/arch.png)
 
-Nel nostro esempio abbiamo due microservizi indipendenti, che si registrano (service discovery), recuperano le property dal config service (concetto di configurazione distribuita) e comunicano tra di loro. L'intero sistema è "nascosto" dietro un API gateway (ZUUL).
+Nel nostro esempio abbiamo due microservizi indipendenti, che si registrano (service discovery) e recuperano le property dal config service (concetto di configurazione distribuita). L'intero sistema è "nascosto" dietro un API gateway (ZUUL).
 
 **INFRASTRUTTURALI**
 1. config: Config Server (sulla porta 7777)
